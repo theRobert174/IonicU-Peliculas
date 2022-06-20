@@ -11,7 +11,7 @@ export class ImagenPipe implements PipeTransform {
   transform(img: string, size: string = 'w500'): string {
 
     if(!img){
-      return `./assests/no-image-banner.png`;
+      return `../../../assets/no-image-banner.png`;
     }
 
     const imgURL = `${URL}/${size}${img}`;
