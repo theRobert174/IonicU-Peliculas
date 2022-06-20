@@ -20,6 +20,16 @@
 
   <app-slideshow-poster [Peliculas]="peliculasRecientes"></app-slideshow-poster>
 
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>        
+        <h3>Populares</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-slideshow-poster [Peliculas]="populares"></app-slideshow-poster>
+
   <!-- <ion-slides [options]="slideOpts">
     <ion-slide *ngFor="let pelicula of peliculasRecientes">
       <ion-card>

@@ -10,6 +10,7 @@ import { RespuestaMDB, Pelicula } from '../interfaces/interfaces';
 export class Tab1Page implements OnInit{
 
   peliculasRecientes: Pelicula[] = [];
+  populares: Pelicula[] = [];
   slideOpts = {
     slidesPerView: 1.3,
     freeMode: true
@@ -19,8 +20,12 @@ export class Tab1Page implements OnInit{
 
   ngOnInit() {
     this.movieServices.getFeature().subscribe(resp => {
-      console.log("Resp", resp);
+      //console.log("Resp", resp);
       this.peliculasRecientes = resp.results;
+    });
+    this.movieServices.getPopulares().subscribe(resp => {
+      console.log("Populares",resp);
+      this.populares = resp.results;
     });
   }
 }

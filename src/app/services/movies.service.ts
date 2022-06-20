@@ -37,4 +37,11 @@ export class MoviesService {
     //return this.http.get<RespuestaMDB>(`https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2022-01-01&primary_release_date.lte=2022-06-01&api_key=6d4907204e31e1cbf4de9b6fa7671171&language=es&include_image_language=es`);
     return this.executeQuery<RespuestaMDB>(`/discover/movie?primary_release_date.gte=${inicio}&primary_release_date.lte=${fin}`);
   }
+
+  getPopulares(){
+
+    const query = '/discover/movie?sort_by=popularity.desc';
+
+    return this.executeQuery<RespuestaMDB>(query);
+  }
 }
