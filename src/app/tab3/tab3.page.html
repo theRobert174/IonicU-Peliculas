@@ -15,6 +15,6 @@
       </ion-row>
     </ion-grid>
 
-    <app-slideshow-poster [Peliculas]="pelicula.pelis"></app-slideshow-poster>
+    <app-slideshow-poster [Peliculas]="pelicula.pelis" (evClose)="ionViewWillEnter()"></app-slideshow-poster>
   </div>
 </ion-content>

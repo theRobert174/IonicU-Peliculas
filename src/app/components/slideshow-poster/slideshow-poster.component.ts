@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { Pelicula } from 'src/app/interfaces/interfaces';
 import { ModalController } from '@ionic/angular';
 import { DetalleComponent } from '../detalle/detalle.component';
@@ -16,6 +16,7 @@ export class SlideshowPosterComponent implements OnInit {
     slidesPerView: 3.3,
     freeMode: true
   }
+  @Output() evClose = new EventEmitter();
 
   constructor(private modalCtrl: ModalController) { }
 
@@ -28,6 +29,7 @@ export class SlideshowPosterComponent implements OnInit {
         id
       }
     });
+    modal.onWillDismiss().then(resp => {/*console.log('modalClosed');*/ this.evClose.emit();});
     modal.present();
   }
 

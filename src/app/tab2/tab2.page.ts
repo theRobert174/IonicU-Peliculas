@@ -20,7 +20,7 @@ export class Tab2Page {
 
   buscar( event ){
     const valor: string = event.detail.value;
-    console.log(valor);
+    //console.log(valor);
     if(valor.length === 0){
       this.buscando = false;
       this.peliculas = [];
@@ -28,7 +28,7 @@ export class Tab2Page {
     }
     this.buscando = true;
     this.moviesService.getSearch(valor).subscribe(resp => {
-      console.log(resp['results']);
+      //console.log(resp['results']);
       this.peliculas = resp.results;
       this.buscando = false;
     });

@@ -28,16 +28,16 @@ export class DetalleComponent implements OnInit {
     //console.log("ID",this.id);
     
     this.dataLocalService.existePelicula(this.id).then(existe => {
-      console.log("Detalle component existe: ", existe);
+      //console.log("Detalle component existe: ", existe);
       this.estrella = existe;
     });
   
     this.moviesService.getPeliculasDetalle(this.id).subscribe(resp => {
-      console.log(resp);
+      //console.log(resp);
       this.pelicula = resp;
     });
     this.moviesService.getActoresPelicula(this.id).subscribe(resp => {
-      console.log(resp);
+      //console.log(resp);
       this.actores = resp.cast;
     });
   }
