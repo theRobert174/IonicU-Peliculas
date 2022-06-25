@@ -33,7 +33,7 @@ export class DetalleComponent implements OnInit {
     });
   
     this.moviesService.getPeliculasDetalle(this.id).subscribe(resp => {
-      //console.log(resp);
+      console.log(resp.id);
       this.pelicula = resp;
     });
     this.moviesService.getActoresPelicula(this.id).subscribe(resp => {
